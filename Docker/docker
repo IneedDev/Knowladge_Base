@@ -1,0 +1,42 @@
+docker-compose up
+docker-compose down
+
+*** sample docker-compose
+
+version: '3.5
+services:
+  app:
+    build: .
+    image: "db_anonymizer:v1"
+    volumes:
+      - ./user-settings/:/usr/src/app/
+
+*** docker-compose volume
+volumes:
+- ./user-settings/:/usr/src/app/
+// location on host side : location on docker side
+
+*** docker-compose localhost db connection
+
+
+
+*** delete images not active
+docker images prune
+docker images prune -a
+
+*** list container
+docker ps -a
+
+*** list container ports
+docker ps -a -q
+
+*** list images id
+docker images -a -q
+
+*** sample Dockerfile
+
+FROM openjdk:8u212-b04-jdk-stretch
+#define parts of container in this case we need add jar file
+ADD ./target/APP_NAME_IMAGE-1.0-SNAPSHOT.jar .
+#command definition to run image
+CMD java -Xms512m -Xmx1024m -jar APP_NAME_IMAGE-1.0-SNAPSHOT.jar
