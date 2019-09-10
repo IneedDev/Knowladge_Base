@@ -8,7 +8,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/CURL/curl">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/CURL/readme.md">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/Docker/docker">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Env/env">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Env/env.sh">
           <value>
             <set />
           </value>

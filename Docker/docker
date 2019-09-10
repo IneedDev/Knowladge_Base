@@ -1,15 +1,17 @@
-docker-compose up
+docker-compose up or docker-compose up -d // run as daemon in the background
 docker-compose down
+docker-compose logs
 
 *** sample docker-compose
 
 version: '3.5
 services:
   app:
-    build: .
-    image: "db_anonymizer:v1"
+    build: .  // docker compose build . means that compose will look for a Dockerfile
+    image: "db_anonymizer:v1"  //to build result image from Dockerfile will be called
     volumes:
       - ./user-settings/:/usr/src/app/
+
 
 *** docker-compose volume
 volumes:

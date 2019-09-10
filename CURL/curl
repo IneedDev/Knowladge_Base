@@ -1,0 +1,20 @@
+git bash
+
+//open website
+
+curl http://www.onet.pl/
+
+//download website
+
+curl -o website https://www.onet.pl/
+
+//download zip and rename
+
+curl -o archive.zip https://domain.com/file.zip
+
+check website status
+
+curl -I https://www.onet.pl/
+
+
+curl https://mysubdomain.zendesk.com/api/v2/groups.json \ -v -u myemail@example.com:mypassword
