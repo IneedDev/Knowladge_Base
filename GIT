@@ -28,6 +28,11 @@ git checkout -
 merge active branch with branch
 git merge PR-001
 
+Update local branch
+git pull
+git pull origin PR-001
+
+
 git status
 
 add file to staging are
@@ -35,3 +40,8 @@ git status add filename
 
 add all new and changed file to staging area
 git status add -A
+
+initial git and config
+git init
+git clone ssh:.....
+git remote add origin ssh://
