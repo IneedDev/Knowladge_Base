@@ -1,0 +1,1 @@
+test file which need to be copied into alpine container

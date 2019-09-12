@@ -55,3 +55,11 @@ docker build -t IMAGE_NAME .
 docker build -t docker_image_name:and_version .
 docker run
 
+run docker in mode that after stop it will be removed
+docker run --ti --rm NAME:TAG directory eg /bin/sh
+
+docker run -ti --rm pawel/alpine-smarter:1.0 /bin/sh
+
+docker build -t pawel/alpine-smarter:1.0 .
+
+docker images --filter "dangling=true"
