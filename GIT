@@ -45,3 +45,12 @@ initial git and config
 git init
 git clone ssh:.....
 git remote add origin ssh://
+
+
+check user email and name
+git config user.email
+git config user.name
+
+change user email and name
+git config user.email "p.romaniuk.pl@gmail.com"
+git config user.name ""
