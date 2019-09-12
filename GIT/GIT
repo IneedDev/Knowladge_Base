@@ -54,3 +54,8 @@ git config user.name
 change user email and name
 git config user.email "p.romaniuk.pl@gmail.com"
 git config user.name ""
+
+#Untrack files already added to git repository based on .gitignore
+git rm -r --cached
+git add .
+git commit -m ".gitignore in now working"
