@@ -18,7 +18,16 @@ kubectl describe deployment DEPLOYMENT_NAME
 
 kubectl get deployments
 
+- View the Pod and Service you just created
+kubectl get pod,svc -n kube-system
+
 A deployment is an object in Kubernetes that lets you manage a set of identical pods.
+
+A deployment is responsible for keeping a set of pods running.
+
+A service is responsible for enabling network access to a set of pods.
+
+--- SERVICE
 
 apiVersion: v1
 kind: Service
@@ -97,7 +106,7 @@ ports:
 
 =====
 
-piVersion: v1
+apiVersion: v1
 kind: Service
 metadata:
   name: db-dev-00-kafka-manager-8080
