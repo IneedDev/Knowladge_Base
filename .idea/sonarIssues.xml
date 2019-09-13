@@ -8,7 +8,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/.gitignore">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.idea/workspace.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/BASH/bash-script.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/BASH/script.sh">
           <value>
             <set />
           </value>
@@ -34,6 +49,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/Env/env.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/K8S/config.yml">
           <value>
             <set />
           </value>
@@ -69,6 +89,36 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../db_anonymizer/src/main/java/com/interns/conn/DbConnection.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../db_anonymizer/src/main/java/com/interns/service/Anonymizer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../db_anonymizer/src/main/java/com/interns/utils/DbUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../db_anonymizer/src/main/java/com/interns/utils/SqlUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../db_anonymizer/src/main/resources/anonymization_settings.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../db_anonymizer/src/main/resources/user_settings.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../db_anonymizer/src/main/resources/user_settings_db_source.yml">
           <value>
             <set />
           </value>

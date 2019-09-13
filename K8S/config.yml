@@ -1,0 +1,152 @@
+
+command to control kubernets cluster
+kubeclt
+
+A Pod (as in a pod of whales or pea pod) is a group of one or more containers (such as Docker containers). Containers within a Pod share an IP address and port space, and can find each other via localhost.
+Applications within a Pod also have access to shared volumes, which are defined as part of a Pod and are made available to be mounted into each application’s filesystem.
+
+Service - define logical set of PODS
+
+CREATE POD
+kubectl create -f pod.yaml
+GET POD
+kubestl get pods
+
+kubectl create -f deployment.yaml
+
+kubectl describe deployment DEPLOYMENT_NAME
+
+kubectl get deployments
+
+A deployment is an object in Kubernetes that lets you manage a set of identical pods.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-00-kafka-manager-8080
+  annotations:
+    balancer/http.frontend.fqdn.1:       "kafka.manager.app.c001.k8s.easypack24.net"
+balancer/http.backend.name:          "8080-dev-00-kafka-manager"
+balancer/http.backend.balance:       "roundrobin"
+labels:
+  product: kafka
+  app:     manager
+  env:     onboard
+spec:
+  ports:
+    - name: http-listener-8080
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  selector:
+    run: dev-00-kafka-manager-8080
+
+--- DEPLOYMENT
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: dev-00-kafka-manager-8080
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run:     dev-00-kafka-manager-8080
+        product: kafka
+        app:     manager
+        env:     onboard
+    spec:
+      nodeSelector:
+        role: worker
+      terminationGracePeriodSeconds: 5
+      containers:
+        - name: kafka-manager
+          image: docker.easypack24.net:5000/intern/kafka:1-0-latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PORT
+              value: "8080"
+  - name: KAFKA
+      value: "kafka01-t-b-01.easypack24.net:9092"
+  - name: BACKUP
+      value: "true"
+  - name: DB_URL
+      value: "jdbc:postgresql://db-dev-00-kafka-manager-8080:5432/postgres"
+  - name: DB_USER
+      value: "userosoasd"
+  - name: DB_PASS
+      value: "asda3@fsado&7asd232Sfas"
+  - name: DB_DIALECT
+      value: "org.hibernate.dialect.PostgreSQLDialect"
+ports:
+  # http listeners ports
+  - containerPort: 8080
+      resources:
+        requests:
+          cpu: 500m
+          memory: 744Mi
+        limits:
+          cpu: 2500m
+          memory: 1512Mi
+
+=====
+
+piVersion: v1
+kind: Service
+metadata:
+  name: db-dev-00-kafka-manager-8080
+  labels:
+    product: kafka
+    app:     manager
+    env:     onboard
+spec:
+  ports:
+    - port: 5432
+      protocol: TCP
+  selector:
+    run: db-dev-00-kafka-manager-8080
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: db-dev-00-kafka-manager-8080
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: db-dev-00-kafka-manager-8080
+        product: kafka
+        app:     manager
+        env:     onboard
+    spec:
+      nodeSelector:
+        role: worker
+      containers:
+        - name: postgres
+          image: docker.easypack24.net:5000/postgres:9.6.3
+          env:
+            - name: POSTGRES_DB
+              value: "postgres"
+            - name: POSTGRES_USER
+              value: "userosoasd"
+            - name: POSTGRES_PASSWORD
+              value: "asda3@fsado&7asd232Sfas"
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: pg-data
+            - mountPath: /docker-entrypoint-initdb.d
+              name: init-db
+      volumes:
+        - name: pg-data
+          emptyDir: {}
+        - name: init-db
+          emptyDir: {}
