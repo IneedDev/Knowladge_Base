@@ -24,6 +24,7 @@ start_with_path.sh
 *.iws
 *.iml
 *.ipr
+*.xml
 
 .idea/workspace.xml
 

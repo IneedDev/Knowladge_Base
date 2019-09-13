@@ -26,22 +26,22 @@ jdbc:postgresql://host.docker.internal:5432/InPost?autoReconnect=true&useSSL=fal
 docker images prune
 docker images prune -a
 
-*** list of all containers
+#list of all containers
 docker ps -a
 
-*** list container ports
+#list container ports
 docker ps -a -q
 
-*** list images id
+#list images id
 docker images -a -q
 
-*** Batch remove containers and images at once
+#Batch remove containers and images at once
 
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 docker rmi $(docker images -a -q)
 
-*** sample Dockerfile
+#sample Dockerfile
 
 FROM openjdk:8u212-b04-jdk-stretch
 #define parts of container in this case we need add jar file
@@ -49,7 +49,17 @@ ADD ./target/APP_NAME_IMAGE-1.0-SNAPSHOT.jar .
 #command definition to run image
 CMD java -Xms512m -Xmx1024m -jar APP_NAME_IMAGE-1.0-SNAPSHOT.jar
 
-*** FROM IMAGE TO CONTAINER
+#FROM IMAGE TO CONTAINER
 
-docker build -t IMAGE_NAME
+docker build -t IMAGE_NAME .
+docker build -t docker_image_name:and_version .
 docker run
+
+run docker in mode that after stop it will be removed
+docker run --ti --rm NAME:TAG directory eg /bin/sh
+
+docker run -ti --rm pawel/alpine-smarter:1.0 /bin/sh
+
+docker build -t pawel/alpine-smarter:1.0 .
+
+docker images --filter "dangling=true"
