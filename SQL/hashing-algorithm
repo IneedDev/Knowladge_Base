@@ -1,0 +1,56 @@
+EXPLAIN (FORMAT JSON, ANALYZE)
+SELECT * FROM public.customer_test;	
+SELECT * FROM temp_first_name;
+SELECT * FROM temp_first_name_dictionary;
+
+-- temp table with yaml data creation
+
+CREATE TABLE temp_first_name
+(
+	value character varying(255) NOT NULL,
+	id serial,
+	CONSTRAINT temp_first_name_pkey PRIMARY KEY (value)
+);
+
+INSERT INTO temp_first_name VALUES('John');
+INSERT INTO temp_first_name VALUES('Patric');
+INSERT INTO temp_first_name VALUES('Marta');
+
+-- dictionary creation
+
+CREATE TABLE  IF NOT EXISTS temp_first_name_dictionary 
+(
+original character varying(255) NOT NULL, 
+hash character varying(255) NOT NULL,
+value character varying(255) NOT NULL, 
+CONSTRAINT temp_first_name_dictionary_pkey PRIMARY KEY (original),
+CONSTRAINT hash_uniquenessfirst_name UNIQUE (hash)
+);
+
+EXPLAIN (FORMAT JSON, ANALYZE)
+
+-- hashing function
+
+CREATE FUNCTION createHash(_val character varying(255))
+RETURNS text AS $$
+DECLARE _hash text;
+BEGIN
+SELECT hash INTO _hash FROM temp_first_name_dictionary WHERE original = _val;
+IF NOT FOUND THEN WITH computed AS ( WITH existing AS (
+	SELECT COUNT(*) AS quantity, value FROM temp_first_name_dictionary GROUP BY value ORDER BY quantity) 
+	SELECT temp_first_name.value, COALESCE(existing.quantity, 0) as next_value 
+	FROM temp_first_name LEFT JOIN existing ON existing.value = temp_first_name.value 
+	ORDER BY existing.quantity IS NOT NULL ASC, existing.quantity ASC, value ASC LIMIT 1 ) 
+									INSERT INTO temp_first_name_dictionary(original, value, hash) SELECT _val, computed.value, computed.value || computed.next_value 
+									FROM computed ON CONFLICT DO NOTHING;
+									SELECT hash INTO _hash FROM temp_first_name_dictionary WHERE original = _val;
+									END IF;
+									RETURN _hash;
+									END; $$
+									LANGUAGE PLPGSQL;
+									
+with result as (with missing as (select distinct (first_name) as first_name FROM public.customer_test as tab left join temp_first_name_dictionary as dic on tab.first_name= dic.original where dic.original IS null) 
+select createhash(first_name) from missing) select count(*)from result;
+				
+update public.customer_test set first_name = (select hash from temp_first_name_dictionary where original = first_name); 
+DROP FUNCTION createHash;
