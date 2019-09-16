@@ -113,6 +113,51 @@ spec:
 - kubectl autoscale rs REPLICASET_NAME --max=6 --cpu-percent=28  // zwieksz ilosc POD-ów do 6 jesli cpu zużycie dobije do 28%
 - kubectl get hpa NAME_OBJECTSLAE // obiekt to autoscalowania
 
+## Deployment
+
+- Chart Deployment -> ReplicaSet -> Pods
+- Deployment wykorzystuje obiekt ReplicaSet do zarzadzania aktualizacja aplikacji.
+    - Proces aktualiyacji
+        - Przyjscie ządania
+        - Stworzenie nowego obiektu ReplicaSet
+        - ReplicaSet tworzy POD-y
+- Odpowiada za powstanie aplikacji 
+
+````
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fussy
+  labels:
+    app: fussy
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: fussy
+  template:
+    metadata:
+      labels:
+        app: fussy
+    spec:
+      containers:
+      - name: fussy
+        image: cloudowski/fussy-container:0.3
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 3
+````
+## Komendy
+
+- kubctl get deploy -w
+- kubctl scale deploy/DEPLOYMENT_NAME --replicas=8 // wyskalowanie obiektu Deployment
+- Aktualizacja
+    - kubectl set image deploy/DEPLOYMEN_NAME DEPLOYMENT_NAME=IMAGE_NAME:NEW_TAG --record
 
 
 
