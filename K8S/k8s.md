@@ -8,3 +8,11 @@ A Pod (as in a pod of whales or pea pod) is a group of one or more containers (s
 Applications within a Pod also have access to shared volumes, which are defined as part of a Pod and are made available to be mounted into each application’s filesystem.
 
 Service - define logical set of PODS
+
+## POD
+
+- edytowanie POD-a równa sie przebudowanie POD-a
+
+### Tworzenie POD
+- yaml
+
