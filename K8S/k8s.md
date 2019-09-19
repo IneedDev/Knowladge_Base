@@ -122,7 +122,17 @@ spec:
         - Stworzenie nowego obiektu ReplicaSet
         - ReplicaSet tworzy POD-y
 - Odpowiada za powstanie aplikacji 
+- Zawiera zmienne środowiskowe
 
+````
+        env:
+        - name: USER_UID
+          value: "1000"
+        - name: USER_GID
+          value: "1000"
+````
+
+plik deployment.yaml
 ````
 apiVersion: apps/v1
 kind: Deployment
@@ -152,12 +162,50 @@ spec:
           initialDelaySeconds: 10
           periodSeconds: 3
 ````
+
+
 ## Komendy
 
+- kubectl apply -f DEPLOYMEN_NAME.yaml
 - kubctl get deploy -w
 - kubctl scale deploy/DEPLOYMENT_NAME --replicas=8 // wyskalowanie obiektu Deployment
 - Aktualizacja
     - kubectl set image deploy/DEPLOYMEN_NAME DEPLOYMENT_NAME=IMAGE_NAME:NEW_TAG --record
 
 
+### ConfigMap
 
+- ConfigMap dostarcza ustawienia ktore przekazuje do naszego kontenera w postaci zmiennych ENV
+- ConfigMap moze zostać "zamontowane" kontenerze
+
+````
+Gitea is one of several notable self-hosted git solutions, but because it was seemingly lightweight to run (it's a Go binary, and can also be delivered as a Docker image), and easy to configure, 
+I decided I would try running it inside my cluster (alongside my registry, and other stateful services) as well.
+````
+
+```
+apiVersion: v1
+data:
+  APP_NAME: "My awesome GIT server!!!"
+  #DISABLE_REGISTRATION: "true"
+  #LOCAL_ROOT_URL: "http://gitea.192.168.99.100.nip.io"
+  USER_UID: "1000"
+  USER_GID: "1000"
+kind: ConfigMap
+metadata:
+  name: gitea-config
+  labels:
+      app: gitea
+```
+
+Aby korztsać w Deployment.yaml ze zmiennych środowiskowych z CinfigMap trzeba w Deployment.yaml wskazać CinfigMap 
+
+````
+envFrom:
+  - configMapRef:
+  name: gitea-config
+````
+
+## Komendy 
+
+- kubectl apply -f CONFIGMAP.YAML

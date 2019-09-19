@@ -1,0 +1,1 @@
+Decorator patterns is structura design pattern that lets you attach new behaviour to objects by placing them into wrapper objects that contain these bahaviour.
