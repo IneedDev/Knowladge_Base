@@ -18,7 +18,7 @@ _git checkout -b PR-001_
 
 _git push origin PR-001_
 
-**create remote branch from current local branch** 
+**create remote branch from current local branch**
 
 _git checkout -b PR-001 origin/PR-001_
 
@@ -68,8 +68,8 @@ _git status add -A_
 - _git config user.name_
 
 **change user email and name**
-- _git config user.email "p.romaniuk.pl@gmail.com"_
-- _git config user.name ""_
+- _git config user.email "user@email"_
+- _git config user.name "user name"_
 
 **Untrack files already added to git repository based on .gitignore**
 - _git rm -r --cached ._
