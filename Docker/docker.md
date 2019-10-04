@@ -22,11 +22,11 @@ volumes:
 jdbc:postgresql://host.docker.internal:5432/InPost?autoReconnect=true&useSSL=false
 
 
-#delete images not active
+# delete images not active
 docker images prune
 docker images prune -a
 
-#list of all containers
+# list of all containers
 docker ps -a
 
 #list container ports
