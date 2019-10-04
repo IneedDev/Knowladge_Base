@@ -2,7 +2,7 @@ docker-compose up or docker-compose up -d // run as daemon in the background
 docker-compose down
 docker-compose logs
 
-*** sample docker-compose
+***sample docker-compose
 
 version: '3.5
 services:
@@ -13,12 +13,12 @@ services:
       - ./user-settings/:/usr/src/app/
 
 
-** docker-compose volume
+**docker-compose volume
 volumes:
-- ./user-settings/:/usr/src/app/
+-./user-settings/:/usr/src/app/
 // location on host side : location on docker side
 
-*** docker-compose localhost db connection
+***docker-compose localhost db connection
 jdbc:postgresql://host.docker.internal:5432/InPost?autoReconnect=true&useSSL=false
 
 
@@ -27,13 +27,13 @@ docker images prune
 docker images prune -a
 
 # list of all containers
-docker ps -a
+*docker ps -a
 
 #list container ports
-docker ps -a -q
+*docker ps -a -q
 
 #list images id
-docker images -a -q
+*docker images -a -q
 
 #Batch remove containers and images at once
 
