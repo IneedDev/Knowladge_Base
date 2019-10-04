@@ -13,7 +13,7 @@ services:
       - ./user-settings/:/usr/src/app/
 
 
-*** docker-compose volume
+** docker-compose volume
 volumes:
 - ./user-settings/:/usr/src/app/
 // location on host side : location on docker side
@@ -22,7 +22,7 @@ volumes:
 jdbc:postgresql://host.docker.internal:5432/InPost?autoReconnect=true&useSSL=false
 
 
-*** delete images not active
+#delete images not active
 docker images prune
 docker images prune -a
 
