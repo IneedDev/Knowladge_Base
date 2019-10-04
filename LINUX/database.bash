@@ -34,3 +34,13 @@ psql -u postgres -d mydb -a -f "D:\index.sql"
   psql \i sql-create-large-table.sql
 # list datbles in your db
   \dt
+
+postgres user
+
+#log as postgres user and show postgres config file
+sudo su - postgres
+  psql -U postgres -c 'SHOW config_file'
+
+  #log files postgres
+  cd /var/log/postgresql
+  atom postgresql-11-main.log
