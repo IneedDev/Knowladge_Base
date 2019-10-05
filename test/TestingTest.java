@@ -1,6 +1,5 @@
-package com.plays;
+import main.java.com.tests.Testing;
 
-import com.tests.junit.Testing;
 import lombok.Data;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

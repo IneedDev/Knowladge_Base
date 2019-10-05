@@ -1,4 +1,4 @@
-package com.patterns.factory.abstractt;
+package java.main.com.patterns.factory.abstractt;
 
 public class White implements Color {
     @Override

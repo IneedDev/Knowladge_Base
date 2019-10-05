@@ -43,4 +43,4 @@ sudo su - postgres
 
   #log files postgres
   cd /var/log/postgresql
-  atom postgresql-11-main.log
+  atom postgresql-11-java.main.log

@@ -1,4 +1,4 @@
-package com.patterns.decorator;
+package java.main.com.patterns.decorator;
 
 public abstract class ReadDecorator implements Reader {
     protected Reader reader;

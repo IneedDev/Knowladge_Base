@@ -1,6 +1,4 @@
-package com.patterns.singleton;
-
-import java.io.Console;
+package java.main.com.patterns.singleton;
 
 public class Singleton_Lazy {
 

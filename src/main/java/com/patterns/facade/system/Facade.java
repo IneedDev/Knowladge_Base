@@ -1,8 +1,8 @@
-package com.patterns.facade.system;
+package java.main.com.patterns.facade.system;
 
 public class Facade implements SystemFacadeInterface{
 
-    private System system;
+    private java.lang.System system;
     private Device device;
     private Login login;
 

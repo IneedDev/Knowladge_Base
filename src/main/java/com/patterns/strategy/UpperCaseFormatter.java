@@ -1,4 +1,4 @@
-package com.patterns.strategy;
+package java.main.com.patterns.strategy;
 
 public class UpperCaseFormatter implements TextFormatStrategy {
 

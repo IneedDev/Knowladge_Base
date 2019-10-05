@@ -1,4 +1,4 @@
-package com.patterns.facade.bank;
+package java.main.com.patterns.facade.bank;
 
 public class Main {
 

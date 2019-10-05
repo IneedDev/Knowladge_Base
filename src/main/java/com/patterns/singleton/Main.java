@@ -1,4 +1,4 @@
-package com.patterns.singleton;
+package java.main.com.patterns.singleton;
 
 public class Main {
 }

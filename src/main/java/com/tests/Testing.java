@@ -1,4 +1,4 @@
-package com.tests.junit;
+package main.java.com.tests;
 
 import java.util.Random;
 

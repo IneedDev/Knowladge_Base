@@ -1,4 +1,4 @@
-package com.patterns.decorator;
+package java.main.com.patterns.decorator;
 
 public class FileReader implements Reader {
 

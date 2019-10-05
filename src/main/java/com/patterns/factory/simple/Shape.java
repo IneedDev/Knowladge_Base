@@ -1,4 +1,4 @@
-package com.patterns.factory.simple;
+package java.main.com.patterns.factory.simple;
 
 public interface Shape {
 

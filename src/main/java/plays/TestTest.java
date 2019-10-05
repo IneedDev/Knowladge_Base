@@ -1,4 +1,4 @@
-package com.plays;
+package java.main.plays;
 
 import static org.junit.Assert.*;
 

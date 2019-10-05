@@ -1,7 +1,4 @@
-package spring.test;
-
-import java.util.Collection;
-import java.util.Collections;
+package java.main.spring.test;
 
 public abstract class MyCollection {
 

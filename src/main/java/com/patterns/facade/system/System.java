@@ -1,4 +1,4 @@
-package com.patterns.facade.system;
+package java.main.com.patterns.facade.system;
 
 public class System {
 

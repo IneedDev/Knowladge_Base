@@ -1,4 +1,4 @@
-package main.java.com.plays;
+package java.main.plays;
 
 public class Test {
 
