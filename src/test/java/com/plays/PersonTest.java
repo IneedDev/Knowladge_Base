@@ -1,7 +1,9 @@
-package spring.test.mock;
+package com.plays;
 
 import org.junit.Before;
 import org.mockito.Mock;
+import spring.test.mock.Car;
+import spring.test.mock.Person;
 
 public class PersonTest {
 

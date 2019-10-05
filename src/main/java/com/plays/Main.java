@@ -1,4 +1,4 @@
-package com.plays;
+package main.java.com.plays;
 
 import java.util.ArrayList;
 import java.util.HashMap;

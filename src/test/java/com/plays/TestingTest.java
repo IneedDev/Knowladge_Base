@@ -1,4 +1,4 @@
-package spring.test;
+package com.plays;
 
 import com.tests.junit.Testing;
 import lombok.Data;

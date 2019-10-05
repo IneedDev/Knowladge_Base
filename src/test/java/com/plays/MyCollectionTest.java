@@ -1,9 +1,11 @@
-package spring.test;
-
+package com.plays;
+import org.junit.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.*;
 import org.junit.Assert;
+import spring.test.MyCollection;
+import spring.test.MyDictionary;
 
 
 import java.util.ArrayList;
