@@ -1,4 +1,4 @@
-package java.main.com.patterns.facade.system;
+package com.patterns.facade.system;
 
 public class Facade implements SystemFacadeInterface{
 
@@ -25,6 +25,6 @@ public class Facade implements SystemFacadeInterface{
     }
 
     public void confirmUserInSystem() {
-        system.confirmUserInSystem();
+
     }
 }

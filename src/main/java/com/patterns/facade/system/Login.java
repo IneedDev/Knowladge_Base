@@ -1,4 +1,4 @@
-package java.main.com.patterns.facade.system;
+package com.patterns.facade.system;
 
 public class Login {
 
