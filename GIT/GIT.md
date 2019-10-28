@@ -75,3 +75,6 @@ _git status add -A_
 - _git rm -r --cached ._
 - _git add ._
 - _git commit -m ".gitignore in now working"_
+
+** git credentials cache and timeout
+git config --global credential.helper "cache --timeout 7200"
