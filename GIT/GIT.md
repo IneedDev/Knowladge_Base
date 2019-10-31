@@ -78,3 +78,11 @@ _git status add -A_
 
 ** git credentials cache and timeout
 git config --global credential.helper "cache --timeout 7200"
+
+** get remote repo url 
+
+git remote get-url origin
+
+** refresh all remoyte branches in intelij
+
+VCS - git - fetch
