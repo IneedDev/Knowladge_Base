@@ -58,7 +58,7 @@ test:
         
 - consume the records from the beginning of the topic
 
-        kafka-avro-console-consumer --topic newTopicConsoleProducer \
+        kafka-avro-console-consumer --topic kafka-producer-topic \
             --bootstrap-server 127.0.0.1:9092 \
             --property schema.registry.url=http://127.0.0.1:8081 \
             --from-beginning
