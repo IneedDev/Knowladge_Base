@@ -17,3 +17,7 @@ cat /usr/src/filename.txt
 
 # unhide files from terminal
 ls -ld .?*
+
+# remove directory
+
+sudo rm -R file_name

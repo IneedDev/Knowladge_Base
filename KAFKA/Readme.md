@@ -1,4 +1,4 @@
-##Instruction 
+## Instruction 
 
 - post installation
 
@@ -62,4 +62,35 @@ test:
             --bootstrap-server 127.0.0.1:9092 \
             --property schema.registry.url=http://127.0.0.1:8081 \
             --from-beginning
-          
+       
+## REST Client producer / consumer  
+
+Non Java Producer ----> Kafka REST Proxy:
+- ----> Kafka Cluster 
+- ----> Kafka Schema Registry
+
+## Produce Binary:
+- Header
+    - Content-Type  - application/vnd.kafka.binary.v2+json
+    - Accept - application/vnd.kafka.v2+json, application/vnd.kafka+json, application/json
+    
+## Kafka Rest Proxy - installation
+
+## Kafka installation using binaries
+
+    https://kafka.apache.org/downloads
+    https://www.apache.org/dyn/closer.cgi?path=/kafka/2.3.1/kafka_2.11-2.3.1.tgz
+
+tar -xvf file.tar  
+ 
+- check zookeeper.properties file 
+- start zookeeper bin/zookeeper-server-start.sh config/zookeeper.properties 
+- start kafka  bin/kafka-server-start.sh config/server.properties 
+- create topic for stream application input and output
+- start kafka console producer and consumer
+
+## KafkaStreams APP
+
+- new topics input output
+
+

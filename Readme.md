@@ -1,3 +1,5 @@
-file for git play
+####  Knowladge Base
 
-new line edit from gitbash command an
+- kafka https://github.com/IneedDev/Knowladge_Base/blob/PR-001/KAFKA/Readme.md
+- docker https://github.com/IneedDev/Knowladge_Base/blob/PR-001/Docker/Readme.md
+- git https://github.com/IneedDev/Knowladge_Base/blob/PR-001/GIT/GIT.md
