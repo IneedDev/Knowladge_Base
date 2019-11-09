@@ -19,5 +19,21 @@ cat /usr/src/filename.txt
 ls -ld .?*
 
 # remove directory
-
 sudo rm -R file_name
+
+# list size owner ect of the files
+ls -ln
+ls -l
+
+# owner and file access rights
+
+chown -R username path/to/the/file
+# 777 owner group world
+chmod 777 file_name
+
+# Network
+ping www.test.com
+
+
+
+
