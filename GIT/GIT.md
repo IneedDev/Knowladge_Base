@@ -86,7 +86,3 @@ git remote get-url origin
 **refresh all remote branches in InteliJ
 
 VCS - git - fetch
-
-##### git revert
-
-git revert commit_hash
