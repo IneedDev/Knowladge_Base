@@ -91,3 +91,7 @@ VCS - git - fetch
 
 git reset HEAD~1
 
+If you feel the need to discard all your local changes and just reset/overwrite everything with a copy from the remote branch then you should follow this guide.
+
+    git fetch --all
+    git reset --hard origin/master
