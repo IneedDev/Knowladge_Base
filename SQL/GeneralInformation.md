@@ -7,3 +7,6 @@ DML – Data Manipulation Language. Instrukcje manipulacji danymi. Możemy do ni
 DDL – Data Definition Language. Instrukcje definiujące. Możemy do nich zaliczyć polecenia takie jak CREATE, ALTER, DROP. Za pomocą instrukcji DDL nie manipulujemy bezpośrednio danymi, a ich strukturą. Możemy zdefiniować kolumny tabel, zmienić typy danych, czy usunąć obiekt taki jak widok, czy tabela.
 
 DCL – Data Control Language. Instrukcje sterujące uprawnieniami w bazie danych / serwerze. Za ich pomocą możemy dandawać np uprawnienia użytkownikom do obiektów, przypisywać role, zmieniać hasła itp. Najważniejsze grupy poleceń to GRANT, DENY, REVOKE. Za pomocą GRANT przyznajemy uprawnienia. REVOKE służy do odbierania uprawnień. DENY zabrania dostępu. Instrukcje te są szczególnie istotne przy administracji serwerem.
+
+#### Rodzaje indeksow
+

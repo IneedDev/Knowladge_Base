@@ -76,18 +76,18 @@ _git status add -A_
 - _git add ._
 - _git commit -m ".gitignore in now working"_
 
-**git credentials cache and timeout
+##### git credentials cache and timeout
 git config --global credential.helper "cache --timeout 7200"
 
-**get remote repo url 
+##### get remote repo url 
 
 git remote get-url origin
 
-**refresh all remote branches in InteliJ
+##### refresh all remote branches in InteliJ
 
 VCS - git - fetch
 
-#### git revert last commit
+##### git revert last commit
 
 git reset HEAD~1
 
