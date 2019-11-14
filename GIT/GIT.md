@@ -88,6 +88,5 @@ git remote get-url origin
 VCS - git - fetch
 
 ##### git revert last commit
-
 git reset HEAD~1
 
