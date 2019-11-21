@@ -68,3 +68,17 @@ CMD java -Xms512m -Xmx1024m -jar APP_NAME_IMAGE-1.0-SNAPSHOT.jar
 * docker build -t pawel/alpine-smarter:1.0 .
 
 * docker images --filter "dangling=true"
+
+#### access postgres in container
+
+    docker exec -it postgres_container_name psql -U postgres
+    \c <database_name>
+    \d
+
+#### stop all containers
+
+    docker ps $(docker ps -a -q)
+    docker rm $(docker ps -a -q)
+    
+    
+

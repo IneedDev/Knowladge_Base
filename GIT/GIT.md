@@ -87,11 +87,19 @@ git remote get-url origin
 
 VCS - git - fetch
 
-#### git revert last commit
+#### git revert last commit or more 
 
-git reset HEAD~1
+    git reset HEAD~1
 
-If you feel the need to discard all your local changes and just reset/overwrite everything with a copy from the remote branch then you should follow this guide.
+#### If you feel the need to discard all your local changes and just reset/overwrite everything with a copy from the remote branch then you should follow this guide.
 
     git fetch --all
     git reset --hard origin/master
+    
+#### delete local nad remote branch
+
+    git branch -D <branch>
+    git push origin --delete <remote_branch>
+    
+    
+  
