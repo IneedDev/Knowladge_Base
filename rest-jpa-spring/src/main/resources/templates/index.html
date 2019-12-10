@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>Index Home</title>
+</head>
+<body>
+<b>Home web page no cache</b>
+<br>
+
+<form action="/result" method="post" th:object="${formData}">
+    <p>Full Name: <input type="text" th:field="${formData.firstname}"/> </p>
+    <p>Full Name: <input type="text" th:field="${formData.lastname}"/> </p>
+    <p>Age: <input type="text" th:field="${formData.age}"/> </p>
+    <p>Employed <input type="checkbox" th:field="${formData.employed}" th:value="true"/> </p>
+    <p><input type="submit" value="Submit"/>
+    <input type="reset" value="Reset form"/></p>
+</form>
+</body>
+</html>

@@ -3,7 +3,7 @@ package com.kafka.rest;
 import org.springframework.stereotype.Service;
 import org.springframework.kafka.core.KafkaTemplate;
 
-@Service
+//@Service
 public class SimpleProducer {
 
     private KafkaTemplate<String, String> simpleProducer;

@@ -209,3 +209,8 @@ envFrom:
 ## Komendy 
 
 - kubectl apply -f CONFIGMAP.YAML
+
+##### Kubernetes workflow
+
+create deployment
+

@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/api")
+//@RestController
+//@RequestMapping("/api")
 public class MessageApi {
 
     private final SimpleProducer simpleProducer;
@@ -16,7 +16,7 @@ public class MessageApi {
         this.simpleProducer = simpleProducer;
     }
 
-    @PostMapping("/message")
+    //@PostMapping("/message")
     public ResponseEntity<String> message(@RequestBody String message) {
         simpleProducer.send(message);
         System.out.println("test");

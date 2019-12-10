@@ -1,7 +1,5 @@
 package plays;
 
-import java.util.ArrayList;
-
 public class DynamicType {
 
     public static void main(String[] args) {
