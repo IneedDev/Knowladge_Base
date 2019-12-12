@@ -214,3 +214,10 @@ envFrom:
 
 create deployment
 
+##### Commands
+
+    kubectl config get-contexts
+    kubectl config current-context
+    kubectl config use-context c001
+    kubectl get nodes
+    kubectl describe pods test-05-payara-pl-78cc8b5f44-nw4mw
