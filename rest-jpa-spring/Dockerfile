@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-MAINTAINER Pawel Romniuk
+MAINTAINER xxx yyyy
 
 RUN apt-get update && apt-get install -y openjdk-8-jdk
 

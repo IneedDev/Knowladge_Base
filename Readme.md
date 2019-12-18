@@ -11,8 +11,30 @@ Repository contains different types of issues and agreagte captured knowladge
 Dockerized and deployed on AWS under 
 http://ec2-52-28-115-213.eu-central-1.compute.amazonaws.com:8080/projects/new
 
-1. create AWS account - 12 months free https://aws.amazon.com/console/
-2. create instance 
-3. login to ubuntu AWS server with: ssh -i "pma-key-pair.pem" ubuntu@Public IP
-4. create docker repository under Amazon Container Services
-5. prepare Dockerfile - sample 
+* create AWS account - 12 months free https://aws.amazon.com/console/
+* create instance 
+* login to ubuntu AWS server with: ssh -i "pma-key-pair.pem" ubuntu@Public IP
+* install docker 
+
+        sudo groupadd docker
+        sudo usermod -aG docker $USER
+        sudo systemctl daemon-reload
+        systemctl start docker
+
+* create docker repository under Amazon Container Services
+* prepare Dockerfile - sample:
+        
+        FROM ubuntu:latest
+        MAINTAINER xxx yyyy
+        RUN apt-get update && apt-get install -y openjdk-8-jdk
+        WORKDIR /usr/local/bin/
+        ADD target/rest-spring-jpa-0.0.1-SNAPSHOT.jar .
+        ENTRYPOINT ["java", "-jar", "rest-spring-jpa-0.0.1-SNAPSHOT.jar"]
+
+* login to docker registry
+            
+        aws ecr get-login > text.txt
+        docker login -u AWS https://753295912869.dkr.ecr.eu-central-1.amazonaws.com
+        push docker image to AWS docker registry
+* pull image to ecr docker pull 753295912869.dkr.ecr.eu-central-1.amazonaws.com/docker-registry-name
+* docker run -p 8080:8080 753295912869.dkr.ecr.eu-central-1.amazonaws.com/docker-repository-name
