@@ -23,6 +23,12 @@ Replica - kopia shardu - backup w momencie kiedy Nod padnie i tym samym shard pa
         $ curl -H 'Content-Type: application/json' -XPUT http://localhost:9200/test-2018.07.20
         {"acknowledged":true,"shards_acknowledged":true,"index":"index_name"}
         
+        
+        curl -XPUT 'http://localhost:9200/blog/user/dilbert' -'{ "name" : "Dilbert Brown" }'son' -d '
+        
+        response:
+        {"_index":"blog","_type":"user","_id":"dilbert","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
+
 #### get all indexes 
 
     curl -XGET http://localhost:8080/_aliases?pretty=true
@@ -62,4 +68,12 @@ Replica - kopia shardu - backup w momencie kiedy Nod padnie i tym samym shard pa
 #### get mapping
 
          curl -XGET 'localhost:8080/index_name/_mapping?pretty'
+         
+#### installation
+
+    wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.2.0-linux-x86_64.tar.gz
+    tar -zxvf elasticsearch-7.2.0-linux-x86_64.tar.gz
+    cd elasticsearch-7.2.0
+    bin/elasticsearch
+
 

@@ -18,6 +18,7 @@ start_with_path.sh
 .settings
 .springBeans
 .sts4-cache
+.gz
 
 ### IntelliJ IDEA ###
 .idea

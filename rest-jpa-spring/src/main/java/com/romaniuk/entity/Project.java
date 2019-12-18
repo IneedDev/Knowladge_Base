@@ -1,10 +1,10 @@
 package com.romaniuk.entity;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.OverridesAttribute;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Project {
@@ -12,9 +12,13 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long projectId;
+
     private String name;
     private String stage;
     private String description;
+
+    @OneToMany(mappedBy = "project")
+    private List<Employee> employeeList;
 
     public Project() {
     }
@@ -23,6 +27,14 @@ public class Project {
         this.name = name;
         this.stage = stage;
         this.description = description;
+    }
+
+    public List<Employee> getEmployeeList() {
+        return employeeList;
+    }
+
+    public void setEmployeeList(List<Employee> employeeList) {
+        this.employeeList = employeeList;
     }
 
     public long getProjectId() {
@@ -55,5 +67,12 @@ public class Project {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void addEmployee(Employee employee) {
+        if(employeeList==null) {
+            employeeList = new ArrayList<>();
+        }
+        employeeList.add(employee);
     }
 }

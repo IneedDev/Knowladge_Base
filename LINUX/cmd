@@ -1,4 +1,4 @@
-#sudo root user
+# sudo root user
 sudo su -
 exit
 
@@ -34,6 +34,7 @@ chmod 777 file_name
 # Network
 ping www.test.com
 
-
+### wyszukanie pliku folderu po nazwie
+find / -xdev 2>/dev/null -name "exampledocs" 
 
 

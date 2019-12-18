@@ -1,9 +1,6 @@
 package com.romaniuk.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Employee {
@@ -14,6 +11,10 @@ public class Employee {
     private String lastname;
     private String email;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "project")
+    private Project project;
+
     public Employee() {
     }
 
@@ -21,6 +22,14 @@ public class Employee {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 
     public long getId() {
