@@ -4,7 +4,16 @@
     kubectl config current-context
     kubectl config use-context c001
     kubectl get nodes
+    //logowanie
     kubectl describe pods test-05-payara-pl-78cc8b5f44-nw4mw
+    kubectl logs POD_NAME
+    
+    // bieganie po podzie
+    
+    //wbicie na baze danych
+    kubectl get svc test-05-postgres-pl 
+    kubectl exec -it test-05-postgres-pl-f6f5cfb58-v7vnb -- psql -U user_name
+
 
 A deployment is an object in Kubernetes that lets you manage a set of identical pods.
 

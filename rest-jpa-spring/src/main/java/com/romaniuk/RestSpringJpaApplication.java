@@ -67,7 +67,7 @@ public class RestSpringJpaApplication {
 
 		// need to set both sides of the relationship manually
 
-//		emp1.setProjects(Arrays.asList(pro1, pro3, pro4));
+//		emp1.setProject(Arrays.asList(pro1, pro3, pro4));
 //		emp2.setProject(Arrays.asList(pro1));
 //		emp3.setProject(Arrays.asList(pro2, pro4));
 

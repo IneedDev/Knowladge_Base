@@ -13,8 +13,8 @@ public class HomeController {
     @RequestMapping("/")
     public String home(Model model) {
         model.addAttribute("formData", new User());
-
-        return "index";
+        return "current-projects";
+//        return "index";
     }
 
     @RequestMapping(value = "/result", method = RequestMethod.POST)
