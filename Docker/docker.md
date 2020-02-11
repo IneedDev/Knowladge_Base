@@ -80,5 +80,7 @@ CMD java -Xms512m -Xmx1024m -jar APP_NAME_IMAGE-1.0-SNAPSHOT.jar
     docker ps $(docker ps -a -q)
     docker rm $(docker ps -a -q)
     
+    docker container stop $(docker container ls -aq)
+    
     
 

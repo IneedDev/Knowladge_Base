@@ -16,7 +16,15 @@ kubectl get deployments
 #View the Pod and Service you just created
 kubectl get pod,svc -n kube-system
 
+kubectl get pod pod_name -o yaml
 
+# access database on k8s
+
+kubectl get svc pod_name_with_database
+
+kubectl get service -w | grep test-05
+
+psql -h 172.26.0.22 -U postgres
 
 --- SERVICE
 

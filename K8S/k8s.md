@@ -13,7 +13,9 @@
     //wbicie na baze danych
     kubectl get svc test-05-postgres-pl 
     kubectl exec -it test-05-postgres-pl-f6f5cfb58-v7vnb -- psql -U user_name
-
+    
+    // monitoring nowej konfigracji 
+    kubectl get pod -o wide -w 
 
 A deployment is an object in Kubernetes that lets you manage a set of identical pods.
 
