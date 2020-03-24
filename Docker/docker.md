@@ -83,4 +83,13 @@ CMD java -Xms512m -Xmx1024m -jar APP_NAME_IMAGE-1.0-SNAPSHOT.jar
     docker container stop $(docker container ls -aq)
     
     
+#### save load+tag docker image
+    docker save local_image | gzip > /tmp/file_name.tar.gz
+    docker import file.tar.gz repository:tag
+    
+
+
+
+    
+    
 
