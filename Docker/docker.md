@@ -87,6 +87,9 @@ CMD java -Xms512m -Xmx1024m -jar APP_NAME_IMAGE-1.0-SNAPSHOT.jar
     docker save local_image | gzip > /tmp/file_name.tar.gz
     docker import file.tar.gz repository:tag
     
+#### remove all dandling images
+    docker rmi $(docker images -f dangling=true -q)
+    
 
 
 
